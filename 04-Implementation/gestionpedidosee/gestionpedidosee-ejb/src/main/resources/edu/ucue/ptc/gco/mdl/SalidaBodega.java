@@ -14,4 +14,46 @@ public class SalidaBodega {
     private int idSalidaBodega;
     private Lote lote;
     private Date fechaSalida;
+
+    /**
+     * @return the idSalidaBodega
+     */
+    public int getIdSalidaBodega() {
+        return idSalidaBodega;
+    }
+
+    /**
+     * @param idSalidaBodega the idSalidaBodega to set
+     */
+    public void setIdSalidaBodega(int idSalidaBodega) {
+        this.idSalidaBodega = idSalidaBodega;
+    }
+
+    /**
+     * @return the lote
+     */
+    public Lote getLote() {
+        return lote;
+    }
+
+    /**
+     * @param lote the lote to set
+     */
+    public void setLote(Lote lote) {
+        this.lote = lote;
+    }
+
+    /**
+     * @return the fechaSalida
+     */
+    public Date getFechaSalida() {
+        return fechaSalida;
+    }
+
+    /**
+     * @param fechaSalida the fechaSalida to set
+     */
+    public void setFechaSalida(Date fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
 }

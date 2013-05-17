@@ -14,7 +14,7 @@ public class NotaEntrega {
     private int idNotaEntrega;
     private Pedido pedido;
     private Date fechaEntrega;
-
+    private Empleado empleado;
     /**
      * @return the idNotaEntrega
      */
@@ -55,5 +55,11 @@ public class NotaEntrega {
      */
     public void setFechaEntrega(Date fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
+    }
+    public Empleado getEmpleado(){
+        return empleado;
+    }
+    public void setEmpleado(Empleado empleado){
+        this.empleado=empleado;
     }
 }

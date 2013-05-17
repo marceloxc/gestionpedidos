@@ -9,6 +9,7 @@ package edu.ucue.ptc.gco.mdl;
  * @author CHRISTIAN
  */
 public class Usuario {
+    private int idUsuario;
     private String nombre;
     private String password;
 
@@ -27,6 +28,12 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 }

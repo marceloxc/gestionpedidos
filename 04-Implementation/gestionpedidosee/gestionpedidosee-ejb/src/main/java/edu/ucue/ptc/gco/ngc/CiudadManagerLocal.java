@@ -15,5 +15,11 @@ import javax.ejb.Local;
 @Local
 public interface CiudadManagerLocal {
     public void crear(Ciudad ciudad);
+    public void actualizar(Ciudad ciudad);
+    public void eliminar(Ciudad ciudad);
+    public void eliminarc(String idCiudad);
+    public void eliminarc(Long idCiudad);
+    
+    public Ciudad obtenerPorId(String idCiudad);
     public List<Ciudad> listar();
 }

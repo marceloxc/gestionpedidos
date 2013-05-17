@@ -22,16 +22,41 @@ public class CiudadManager implements CiudadManagerLocal {
     private CiudadDAOLocal ciudadDao;
     
     @Override
-    public void crear(Ciudad ciudad) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void crear(Ciudad ciudad) {        
+        ciudadDao.crear(ciudad);
     }
 
     @Override
     public List<Ciudad> listar() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+        return ciudadDao.listarTodos();
+    }    
     
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+
+    @Override
+    public void actualizar(Ciudad ciudad) {
+        ciudadDao.actualizar(ciudad);
+    }
+
+    @Override
+    public void eliminar(Ciudad ciudad) {
+        ciudadDao.eliminar(ciudad);
+    }
+
+    @Override
+    public void eliminarc(String idCiudad) {
+        ciudadDao.eliminarc(idCiudad);
+    }
+
+    @Override
+    public void eliminarc(Long idCiudad) {
+        ciudadDao.eliminarc(idCiudad);
+    }
+
+    @Override
+    public Ciudad obtenerPorId(String idCiudad) {
+        return ciudadDao.obtenerPorId(idCiudad);
+    }
 
 }

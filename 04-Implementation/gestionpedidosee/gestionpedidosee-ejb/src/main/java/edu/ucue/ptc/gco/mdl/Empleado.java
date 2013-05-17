@@ -5,13 +5,14 @@
 package edu.ucue.ptc.gco.mdl;
 
 import java.util.List;
+import javax.persistence.Entity;
 
 /**
  *
  * @author Johnny
  */
-public class Empleado {
-    private int idPersona;
+@Entity
+public class Empleado extends Persona implements serializable{
     private int idEmpleado;
     private String user;
     private String Password;
@@ -21,17 +22,12 @@ public class Empleado {
     /**
      * @return the idPersona
      */
-    public int getIdPersona() {
-        return idPersona;
-    }
+    
 
     /**
      * @param idPersona the idPersona to set
      */
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
-    }
-
+    
     /**
      * @return the idEmpleado
      */

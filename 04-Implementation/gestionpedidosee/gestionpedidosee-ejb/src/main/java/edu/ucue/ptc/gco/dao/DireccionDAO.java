@@ -58,7 +58,7 @@ public class DireccionDAO implements DireccionDAOLocal {
     public Direccion obtenerPorId(String idDireccion) {
         Query query = entityManager.createQuery("select d from Direccion d "
                 + "where c.idDireccion = :pidDireccion");
-        query.setParameter("pCedulaRuc", idDireccion);
+        query.setParameter("pidDireccion", idDireccion);
         Direccion direccion = (Direccion)query.getSingleResult();
         
         return direccion;

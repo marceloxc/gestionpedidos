@@ -59,7 +59,7 @@ public class CiudadDAO implements CiudadDAOLocal {
     public Ciudad obtenerPorId(String idCiudad) {
         Query query = entityManager.createQuery("select c from Ciudad c "
                 + "where c.idCiudad = :pidCiudad");
-        query.setParameter("pCedulaRuc", idCiudad);
+        query.setParameter("pidCiudad", idCiudad);
         Ciudad ciudad = (Ciudad)query.getSingleResult();
         
         return ciudad;

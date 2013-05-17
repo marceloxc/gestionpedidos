@@ -4,17 +4,32 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author Johnny
  */
-public class Producto {
+@Entity
+@Table(name = "producto")
+public class Producto implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idProducto;
+    @Column
     private String descripcion;
+    @Column(name = "nombreproducto")
     private String nombreProducto;
-    private List<Lote> lotes;
+    //private List<Lote> lotes;
+    @ManyToOne
     private Categoria categoria;
 
     /**
@@ -62,15 +77,15 @@ public class Producto {
     /**
      * @return the lotes
      */
-    public List<Lote> getLotes() {
+    /*public List<Lote> getLotes() {
         return lotes;
-    }
+    }*/
 
     /**
      * @param lotes the lotes to set
      */
     public void setLotes(List<Lote> lotes) {
-        this.lotes = lotes;
+    //    this.lotes = lotes;
     }
 
     /**

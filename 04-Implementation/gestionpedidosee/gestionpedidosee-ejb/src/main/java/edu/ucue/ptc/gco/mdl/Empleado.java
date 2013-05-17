@@ -6,13 +6,16 @@ package edu.ucue.ptc.gco.mdl;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -24,12 +27,17 @@ public class Empleado extends Persona implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idEmpleado;
+    @Column
     private String user;
-    private String Password;
+    @Column
+    private String password;
     private List<Ruta> rutas;
     private List<ObjetivoEmpleado> objetivos;
     @ManyToOne(optional = false)
+    @JoinColumn(name="idCargo")
     private Cargo cargo;
+    @OneToOne(mappedBy="empleado")
+    private Usuario usuario;
 
     /**
      * @return the idPersona
@@ -72,14 +80,14 @@ public class Empleado extends Persona implements Serializable{
      * @return the Password
      */
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     /**
      * @param Password the Password to set
      */
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     /**
@@ -109,6 +117,13 @@ public class Empleado extends Persona implements Serializable{
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
     
-   
 }

@@ -4,15 +4,29 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Johnny
  */
-public class Cargo {
+@Entity
+@Table(name="cargo")
+public class Cargo implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCargo;
+    @Column
     private String nombre;
+    @OneToMany(mappedBy="cargo")
     private List<Empleado> empleados;
 
     /**

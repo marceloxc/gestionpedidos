@@ -4,15 +4,24 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-/**
- *
- * @author Johnny
- */
-public class Categoria {
+
+@Entity
+@Table(name = "categoria")
+public class Categoria implements Serializable {
+    @Id
     private int idCategoria;
+    @Column
     private String nombre;
+    
+    @OneToMany
     private List<Producto> productos;
 
     /**

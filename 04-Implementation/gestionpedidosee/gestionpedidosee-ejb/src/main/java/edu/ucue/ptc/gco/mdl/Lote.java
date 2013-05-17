@@ -4,19 +4,39 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 
-/**
- *
- * @author Johnny
- */
-public class Lote {
+@Entity
+@Table(name="lote")
+public class Lote implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idLote;
+    
+    @Column
     private int cantidadInicial;
+    @Column
     private int cantidadActual;
+    @Column
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaCaducidad;
+    @Column
     private double costoVenta;
 
+    @ManyToOne
+    private Producto producto; 
+    
     /**
      * @return the idLote
      */
@@ -86,4 +106,14 @@ public class Lote {
     public void setCostoVenta(double costoVenta) {
         this.costoVenta = costoVenta;
     }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+    
+    
 }

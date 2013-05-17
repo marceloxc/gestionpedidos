@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -26,9 +27,12 @@ public class Producto implements Serializable {
     private int idProducto;
     @Column
     private String descripcion;
-    @Column(name = "nombreproducto")
+    @Column
     private String nombreProducto;
-    //private List<Lote> lotes;
+    
+    @OneToMany
+    private List<Lote> lotes;
+    
     @ManyToOne
     private Categoria categoria;
 
@@ -101,4 +105,9 @@ public class Producto implements Serializable {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+
+    public List<Lote> getLotes() {
+        return lotes;
+    }
+    
 }

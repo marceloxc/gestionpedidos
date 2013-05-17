@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Johnny
  */
-public class Persona {
+public abstract class  Persona {
     private int idPersona;
     private String nombres;
     private String apellidos;

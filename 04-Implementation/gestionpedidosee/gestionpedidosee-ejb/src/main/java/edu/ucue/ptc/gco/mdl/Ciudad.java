@@ -4,15 +4,24 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import java.util.List;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 /**
  *
  * @author Johnny
  */
-public class Ciudad {
+@Entity
+public class Ciudad implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCiudad;
     private String nombre;
+    @OneToMany(mappedBy = "idDireccion")
     private List<Direccion> direcciones;
 
     /**

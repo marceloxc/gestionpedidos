@@ -3,12 +3,24 @@
  * and open the template in the editor.
  */
 package edu.ucue.ptc.gco.mdl;
-
+import javax.persistence.ManyToOne;
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 /**
  *
  * @author Johnny
  */
-public class Direccion {
+@Entity
+public class Direccion implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String idDireccion;
     private String callePrincipal;
     private String calleSecundaria;
@@ -16,6 +28,8 @@ public class Direccion {
     private String numeracion;
     private String latitud;
     private String longitud;
+    @JoinColumn(name = "idCiudad", referencedColumnName = "idCiudad")
+    @ManyToOne
     private Ciudad ciudad;
 
     /**

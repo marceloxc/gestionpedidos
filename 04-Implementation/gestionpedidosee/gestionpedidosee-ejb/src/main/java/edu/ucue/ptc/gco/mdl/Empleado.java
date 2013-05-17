@@ -4,19 +4,28 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Johnny
  */
 @Entity
-public class Empleado extends Persona implements serializable{
+public class Empleado extends Persona implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idEmpleado;
     private String user;
     private String Password;
     private List<Ruta> rutas;
+    private List<ObjetivoEmpleado> objetivos;
+    @ManyToOne(optional = false)
     private Cargo cargo;
 
     /**

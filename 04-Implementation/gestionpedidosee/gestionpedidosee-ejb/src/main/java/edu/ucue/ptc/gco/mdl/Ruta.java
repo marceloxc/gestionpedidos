@@ -5,14 +5,29 @@
 package edu.ucue.ptc.gco.mdl;
 
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 /**
  *
  * @author Johnny
  */
+@Entity
+@Table(name="ruta")
 public class Ruta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idRuta;
-    private Empleado empleado;
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Empleado empleado;    
+    @OneToMany(mappedBy="idDireccion")
     private List<Direccion> direcciones;
 
     /**

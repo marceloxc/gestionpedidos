@@ -8,6 +8,6 @@ package edu.ucue.ptc.gco.mdl;
  *
  * @author Johnny
  */
-public class Cliente {
+public class Cliente extends Persona{
     
 }

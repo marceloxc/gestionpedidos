@@ -15,6 +15,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -31,6 +32,7 @@ public class Empleado extends Persona implements Serializable{
     private String user;
     @Column
     private String password;
+    @OneToMany(mappedBy="idRuta")
     private List<Ruta> rutas;
     private List<ObjetivoEmpleado> objetivos;
     @ManyToOne(optional = false)

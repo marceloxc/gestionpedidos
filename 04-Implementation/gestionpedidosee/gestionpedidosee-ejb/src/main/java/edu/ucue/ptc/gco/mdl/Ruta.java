@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -24,8 +25,7 @@ public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idRuta;
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @ManyToOne
     private Empleado empleado;    
     @OneToMany(mappedBy="idDireccion")
     private List<Direccion> direcciones;

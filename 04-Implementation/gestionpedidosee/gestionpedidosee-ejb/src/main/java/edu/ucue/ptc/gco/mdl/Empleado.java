@@ -17,13 +17,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Johnny
  */
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+@PrimaryKeyJoinColumn(name="idPersona")
 public class Empleado extends Persona implements Serializable{    
     @OneToMany(mappedBy="idRuta")
     private List<Ruta> rutas;

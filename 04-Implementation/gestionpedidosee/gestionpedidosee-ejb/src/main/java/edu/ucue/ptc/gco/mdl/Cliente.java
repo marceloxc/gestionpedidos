@@ -4,6 +4,7 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -14,6 +15,6 @@ import javax.persistence.Table;
  */
 @Entity
 @PrimaryKeyJoinColumn(name="idPersona")
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Serializable{
     
 }

@@ -6,6 +6,7 @@ package edu.ucue.ptc.gco.mdl;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,11 +23,17 @@ public class Direccion implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String idDireccion;
+    @Column
     private String callePrincipal;
+    @Column
     private String calleSecundaria;
+    @Column
     private String referencia;
+    @Column
     private String numeracion;
+    @Column
     private String latitud;
+    @Column
     private String longitud;
     @JoinColumn(name = "idCiudad", referencedColumnName = "idCiudad")
     @ManyToOne

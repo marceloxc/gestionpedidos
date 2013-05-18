@@ -6,19 +6,40 @@ package edu.ucue.ptc.gco.mdl;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author Johnny
  */
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class  Persona {
+    @Id        
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idPersona;
+    @Column
     private String nombres;
+    @Column
     private String apellidos;
+    @Column
     private String telefono;
+    @Column
     private String cedulaRuc;
+    @Column
     private String email;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    @Column
     private Date fechaNacimiento;
+    @OneToMany(mappedBy = "idDireccion")
     private List<Direccion> direccion;
 
     /**

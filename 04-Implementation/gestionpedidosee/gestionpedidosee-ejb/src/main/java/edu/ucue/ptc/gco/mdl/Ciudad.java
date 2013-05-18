@@ -6,6 +6,7 @@ package edu.ucue.ptc.gco.mdl;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,7 @@ public class Ciudad implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCiudad;
+    @Column
     private String nombre;
     @OneToMany(mappedBy = "idDireccion")
     private List<Direccion> direcciones;

@@ -5,7 +5,7 @@
 package edu.ucue.ptc.gco.dao;
 
 import edu.ucue.ptc.gco.mdl.DetallePedido;
-import edu.ucue.ptc.gco.mdl.Pedido;
+import edu.ucue.ptc.gco.mdl.Visita;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

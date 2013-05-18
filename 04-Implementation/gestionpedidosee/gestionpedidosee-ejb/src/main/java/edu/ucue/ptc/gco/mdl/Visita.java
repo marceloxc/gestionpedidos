@@ -25,10 +25,10 @@ import javax.persistence.Temporal;
 
 @Entity
 @Table(name="pedido")
-public class Pedido {
+public class Visita {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idPedido;
+    private int idVisita;
    
     @ManyToOne(optional = false)
     @JoinColumn(name="idPersona")
@@ -50,21 +50,24 @@ public class Pedido {
     @Column
     private double total;
     
+    @Column
+    private int estado;
+    
     @OneToMany(mappedBy="detallePedido")
     private List<DetallePedido> detalle;
 
     /**
      * @return the idPedido
      */
-    public int getIdPedido() {
-        return idPedido;
+    public int getIdVisita() {
+        return idVisita;
     }
 
     /**
      * @param idPedido the idPedido to set
      */
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
+    public void setIdVisita(int idPedido) {
+        this.idVisita = idPedido;
     }  
 
     /**

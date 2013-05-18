@@ -28,7 +28,7 @@ public class DetallePedido {
     
     @ManyToOne(optional = false)
     @JoinColumn(name="idPedido")
-    private Pedido pedido;
+    private Visita pedido;
     
     @Column
     private int cantidad;
@@ -63,14 +63,14 @@ public class DetallePedido {
     /**
      * @return the pedido
      */
-    public Pedido getPedido() {
+    public Visita getPedido() {
         return pedido;
     }
 
     /**
      * @param pedido the pedido to set
      */
-    public void setPedido(Pedido pedido) {
+    public void setPedido(Visita pedido) {
         this.pedido = pedido;
     }
 

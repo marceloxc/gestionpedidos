@@ -5,6 +5,7 @@
 package edu.ucue.ptc.gco.mdl;
 
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,8 +28,10 @@ public class Ruta {
     private int idRuta;
     @ManyToOne
     private Empleado empleado;    
-    @OneToMany(mappedBy="idDireccion")
-    private List<Direccion> direcciones;
+    @OneToMany(mappedBy="idVisita")
+    private List<Visita> visitas;
+    @Column
+    private int tipo;
 
     /**
      * @return the idRuta
@@ -58,17 +61,4 @@ public class Ruta {
         this.empleado = empleado;
     }
 
-    /**
-     * @return the direcciones
-     */
-    public List<Direccion> getDirecciones() {
-        return direcciones;
-    }
-
-    /**
-     * @param direcciones the direcciones to set
-     */
-    public void setDirecciones(List<Direccion> direcciones) {
-        this.direcciones = direcciones;
-    }
 }

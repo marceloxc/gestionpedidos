@@ -13,17 +13,17 @@ import javax.ejb.Local;
 @Local
 public interface PedidoDAOLocal {
 
-    public void crear(edu.ucue.ptc.gco.mdl.Pedido pedido);
+    public void crear(edu.ucue.ptc.gco.mdl.Visita pedido);
     
-    public void actualizar(edu.ucue.ptc.gco.mdl.Pedido pedido);
+    public void actualizar(edu.ucue.ptc.gco.mdl.Visita pedido);
 
-    public void eliminar(edu.ucue.ptc.gco.mdl.Pedido pedido);
+    public void eliminar(edu.ucue.ptc.gco.mdl.Visita pedido);
 
     public void eliminarc(java.lang.String idPedido);
 
-    public java.util.List<edu.ucue.ptc.gco.mdl.Pedido> listarTodos();
+    public java.util.List<edu.ucue.ptc.gco.mdl.Visita> listarTodos();
 
-    public edu.ucue.ptc.gco.mdl.Pedido obtenerPorId(java.lang.String idPedido);
+    public edu.ucue.ptc.gco.mdl.Visita obtenerPorId(java.lang.String idPedido);
 
     
 }

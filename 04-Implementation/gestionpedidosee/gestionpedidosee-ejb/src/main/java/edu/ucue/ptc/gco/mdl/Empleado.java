@@ -5,6 +5,7 @@
 package edu.ucue.ptc.gco.mdl;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -33,7 +35,9 @@ public class Empleado extends Persona implements Serializable{
     @ManyToOne(optional = false)
     @JoinColumn(name="idCargo")
     private Cargo cargo;
-
+    @Column
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fechaIngreso;
     public List<ObjetivoEmpleado> getObjetivos() {
         return objetivos;
     }
@@ -43,8 +47,7 @@ public class Empleado extends Persona implements Serializable{
     }
     @OneToOne(mappedBy="empleado")
     private Usuario usuario;
-    @OneToMany(mappedBy="idNotaEntrega")
-    private List<NotaEntrega> notaEntrega;
+
     
 
     /**
@@ -83,13 +86,6 @@ public class Empleado extends Persona implements Serializable{
         this.usuario = usuario;
     }
 
-    public List<NotaEntrega> getNotaEntrega() {
-        return notaEntrega;
-    }
-
-    public void setNotaEntrega(List<NotaEntrega> notaEntrega) {
-        this.notaEntrega = notaEntrega;
-    }
-    
+  
     
 }

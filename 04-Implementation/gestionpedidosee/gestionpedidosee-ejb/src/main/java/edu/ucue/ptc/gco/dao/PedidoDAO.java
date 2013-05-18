@@ -4,7 +4,7 @@
  */
 package edu.ucue.ptc.gco.dao;
 
-import edu.ucue.ptc.gco.mdl.Pedido;
+import edu.ucue.ptc.gco.mdl.Visita;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -22,39 +22,39 @@ public class PedidoDAO implements PedidoDAOLocal {
     private EntityManager entityManager;
    
     @Override
-    public void crear(Pedido pedido) {
+    public void crear(Visita pedido) {
         entityManager.persist(pedido);
     }
 
     @Override
-    public void actualizar(Pedido pedido) {
+    public void actualizar(Visita pedido) {
         entityManager.merge(pedido);
     }
 
     @Override
-    public void eliminar(Pedido pedido) {
+    public void eliminar(Visita pedido) {
         entityManager.remove(pedido);
     }
 
     @Override
     public void eliminarc(String idPedido) {
-        Pedido pedido=obtenerPorId(idPedido);
+        Visita pedido=obtenerPorId(idPedido);
         eliminar(pedido);
     }
 
     @Override
-    public List<Pedido> listarTodos() {
+    public List<Visita> listarTodos() {
         Query query = entityManager.createQuery("select c from Pedido c");
         
         return query.getResultList();
     }
 
     @Override
-    public Pedido obtenerPorId(String idPedido) {
+    public Visita obtenerPorId(String idPedido) {
         Query query = entityManager.createQuery("select c from Pedido c "
                 + "where c.idPedido = :pidPedido");
         query.setParameter("pidPedido", idPedido);
-        Pedido pedido = (Pedido)query.getSingleResult();
+        Visita pedido = (Visita)query.getSingleResult();
         
         return pedido;
     }

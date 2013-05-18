@@ -16,7 +16,7 @@ public interface ClienteDAOLocal {
     public void crearCliente(edu.ucue.ptc.gco.mdl.Cliente cliente);
     public void actualizarCliente(edu.ucue.ptc.gco.mdl.Cliente cliente);
     public void eliminarCliente(edu.ucue.ptc.gco.mdl.Cliente cliente);
-    public java.util.List<edu.ucue.ptc.gco.mdl.Cargo> listarTodosCliente();
+    public java.util.List<edu.ucue.ptc.gco.mdl.Cliente> listarTodosCliente();
     public edu.ucue.ptc.gco.mdl.Cliente obtenerClientePorId(int idCliente);
     
 }

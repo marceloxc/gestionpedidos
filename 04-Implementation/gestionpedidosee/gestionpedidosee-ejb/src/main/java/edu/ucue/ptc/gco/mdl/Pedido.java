@@ -34,12 +34,13 @@ public class Pedido {
      */
     private Empleado empleado;
     
-    /*
+    
     @ManyToOne(optional = false)
-    @JoinColumn(name="idCliente")*/
+    @JoinColumn(name="idPersona")
     private Cliente cliente;
     
     @Temporal(javax.persistence.TemporalType.DATE)
+    @Column
     private Date fechaIngreso;
     
     @OneToOne(mappedBy="direccion")

@@ -18,7 +18,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 @Entity
-@Table(name="lote")
 public class Lote implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -14,7 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 /**
  *
- * @author Johnny
+ * @author ROMAN
  */
 @Entity
 public class Ciudad implements Serializable{

@@ -16,7 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 /**
  *
- * @author Johnny
+ * @author ROMAN
  */
 @Entity
 public class Direccion implements Serializable{

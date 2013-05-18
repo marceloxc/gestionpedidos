@@ -29,12 +29,7 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idPedido;
-    /*
-     **Esto no va aqui
-     */
-    private Empleado empleado;
-    
-    
+   
     @ManyToOne(optional = false)
     @JoinColumn(name="idPersona")
     private Cliente cliente;
@@ -70,21 +65,7 @@ public class Pedido {
      */
     public void setIdPedido(int idPedido) {
         this.idPedido = idPedido;
-    }
-
-    /**
-     * @return the empleado
-     */
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    /**
-     * @param empleado the empleado to set
-     */
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
+    }  
 
     /**
      * @return the cliente

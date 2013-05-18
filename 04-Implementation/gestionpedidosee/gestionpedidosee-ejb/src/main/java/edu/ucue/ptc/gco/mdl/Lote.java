@@ -17,6 +17,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
+/**
+ *
+ * @author EDWIN
+ */
+
 @Entity
 public class Lote implements Serializable {
     @Id

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Johnny
+ * @author ANGIE
  */
 @Entity
 @PrimaryKeyJoinColumn(name="idPersona")

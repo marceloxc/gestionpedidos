@@ -20,7 +20,7 @@ import javax.persistence.Temporal;
 
 /**
  *
- * @author Johnny
+ * @author WILSON
  */
 
 @Entity

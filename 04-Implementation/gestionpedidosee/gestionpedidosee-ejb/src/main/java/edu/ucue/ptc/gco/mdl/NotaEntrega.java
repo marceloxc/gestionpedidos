@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
 
 /**
  *
- * @author Johnny
+ * @author ANGIE
  */
 @Entity
 @Table(name="nota_entrega")

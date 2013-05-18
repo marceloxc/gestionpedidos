@@ -4,17 +4,46 @@
  */
 package edu.ucue.ptc.gco.mdl;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /**
  *
  * @author Johnny
  */
+
+@Entity
+@Table(name="detallePedido")
 public class DetallePedido {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idDetalle;
+    
+    @ManyToOne(optional = false)
+    @JoinColumn(name="idPedido")
     private Pedido pedido;
+    
+    @Column
     private int cantidad;
+    
+    @Column
     private boolean iva;
+    
+    @Column
     private double precio;
+    
+    @Column
     private double total;
+    
+    @ManyToOne(optional = false)
+    @JoinColumn(name="idProducto")
     private Producto producto;
 
     /**

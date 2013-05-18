@@ -6,20 +6,55 @@ package edu.ucue.ptc.gco.mdl;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author Johnny
  */
+
+@Entity
+@Table(name="pedido")
 public class Pedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idPedido;
+    /*
+     **Esto no va aqui
+     */
     private Empleado empleado;
+    
+    /*
+    @ManyToOne(optional = false)
+    @JoinColumn(name="idCliente")*/
     private Cliente cliente;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaIngreso;
+    
+    @OneToOne(mappedBy="direccion")
     private Direccion direccion;
+    
+    @Column
     private double subtotal;
+    
+    @Column
     private double iva;
+    
+    @Column
     private double total;
+    
+    @OneToMany(mappedBy="detallePedido")
     private List<DetallePedido> detalle;
 
     /**

@@ -41,7 +41,7 @@ public class ClienteDAO implements ClienteDAOLocal {
 
 
     @Override
-    public List<Cargo> listarTodosCliente() {
+    public List<Cliente> listarTodosCliente() {
         Query query = entityManager.createQuery("select c from Cliente c");
         
         return query.getResultList();

@@ -40,7 +40,8 @@ public class Empleado extends Persona implements Serializable{
     private Cargo cargo;
     @OneToOne(mappedBy="empleado")
     private Usuario usuario;
-
+    @OneToMany(mappedBy="idNotaEntrega")
+    private List<NotaEntrega> notaEntrega;
     /**
      * @return the idPersona
      */
@@ -127,5 +128,14 @@ public class Empleado extends Persona implements Serializable{
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    public List<NotaEntrega> getNotaEntrega() {
+        return notaEntrega;
+    }
+
+    public void setNotaEntrega(List<NotaEntrega> notaEntrega) {
+        this.notaEntrega = notaEntrega;
+    }
+    
     
 }
